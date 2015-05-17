@@ -1,6 +1,12 @@
 angular.module('starter.controllers', [])
+.controller("MotelCtrl", ['$scope','Motels', function($scope, Motels){
+	$scope.motels = []
 
-.controller('DashCtrl', function($scope) {})
+  var motels = Motels.query(function(data){
+    $scope.motels = motels;
+  });
+
+}])
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
@@ -17,4 +23,5 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+

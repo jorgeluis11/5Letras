@@ -1,6 +1,6 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="Motels">
   <ion-content class="padding">
-    <div class="list card">
+ <!--    <div class="list card">
       <div class="item item-divider">Recent Updates</div>
       <div class="item item-body">
         <div>
@@ -23,6 +23,20 @@
           You have <b>29</b> meetings on your calendar tomorrow.
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <ion-list>
+      <ion-item ng-repeat="motel in motels.results">
+        <h2>
+          {{motel.name}}
+        </h2>
+        <h4>
+                    {{motel.telephone}}
+        </h4>
+        <p>
+         {{motel.description}}
+        </p>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
